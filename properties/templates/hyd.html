@@ -1,0 +1,63 @@
+{% extends 'basic.html' %}
+
+{% block title %}Properties{% endblock %}
+
+
+{% block css %}
+
+
+.popu{
+        text-align: center;
+        padding: 5rem;
+        color: #333f47;
+        /* style="visibility: visible; animation-name: slideInLeft;" */
+    }
+    .post-modern-title{
+        line-height: 1.5;
+        color: black;
+        text-decoration: none;
+
+    }
+.grid-blog{
+        margin: 1rem;
+        border-radius: 5px;
+    }
+    .grid-blog:hover{
+        opacity: 0.8;
+        filter: grayscale(10%);
+    }
+li{
+    list-style: none;
+}
+{% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+
+<div class="popu">
+            <div class="container">
+                {% for product, range, nSlides in hydProds %}
+              <h3 class="text-uppercase font-weight-bold wow-outer"><span class="wow slideInDown" style="visibility: visible; animation-name: slideInDown;">Properties in {{product.0.category}}</span></h3><br>
+              <div class="row">
+                  {% for i in product %}
+                <div class="col-md-6 ">
+                  <!-- Post Modern-->
+                  <article class="post-modern"><a  href="#"><img class="grid-blog" src="/media/{{i.image}}" alt="" width="500" height="300"></a>
+                    <h4><a class="post-modern-title" href="#"></a>{{i.product_name}}</h4>
+                    <ul><li><a href="#" style="color:grey ; text-decoration:none; display: inline; padding: 30px; font-size: large; font-weight: bold;">{{i.price}}</a></li></ul>
+                    <p>{{i.desc}}</p>
+                  </article>
+                </div>
+                  {% endfor %}
+              </div>
+                {% endfor %}
+            </div>
+</div>
+
+
+
+
+
+{% endblock %}
