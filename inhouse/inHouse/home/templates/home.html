@@ -1,0 +1,327 @@
+{% extends 'basic.html' %}
+
+{% block title %}inHouse{% endblock %}
+
+
+{% block css %}
+    .carousel-caption {
+        position: absolute;
+        /* right: 15%; */
+        font-size: 1rem;
+        bottom: 1.25rem;
+        left: 15%;
+        /* padding-top: 1.25rem; */
+        padding-bottom: 4rem;
+        color: #fff;
+        text-align: left;
+        font-family: 'Oswald', sans-serif;
+        /* font-weight: bold; */
+        line-height:6rem;
+    }
+    .btn {
+        background: #4e64f2;
+        background-image: -webkit-linear-gradient(top, #4e64f2, #4e64f2);
+        background-image: -moz-linear-gradient(top, #4e64f2, #4e64f2);
+        background-image: -ms-linear-gradient(top, #4e64f2, #4e64f2);
+        background-image: -o-linear-gradient(top, #4e64f2, #4e64f2);
+        background-image: linear-gradient(to bottom, #4e64f2, #4e64f2);
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 10px 30px 10px 30px;
+        text-decoration: none;
+    }
+
+     .btn:hover {
+        background: #34444d;
+        color: #ffffff;
+        background-image: -webkit-linear-gradient(top, #34444d, #333f47);
+        background-image: -moz-linear-gradient(top, #34444d, #333f47);
+        background-image: -ms-linear-gradient(top, #34444d, #333f47);
+        background-image: -o-linear-gradient(top, #34444d, #333f47);
+        background-image: linear-gradient(to bottom, #34444d, #333f47);
+        text-decoration: none;
+    }
+    .popu{
+        text-align: center;
+        padding: 5rem;
+        color: #333f47;
+        /* style="visibility: visible; animation-name: slideInLeft;" */
+    }
+    .post-modern-title{
+        line-height: 1.5;
+        color: black;
+        text-decoration: none;
+
+    }
+    .grid-blog{
+        margin: 1rem;
+        border-radius: 5px;
+    }
+    .grid-blog:hover{
+        opacity: 0.8;
+        filter: grayscale(10%);
+    }
+    li{
+        display: inline;
+        padding: 30px;
+        font-size: large;
+        font-weight: bold;
+    }
+    .view-more{
+        color: #ffffff;
+        margin: 2rem;
+        box-shadow: 0px 0px 0px rgb(255, 255, 255);
+    }
+    .box{
+        background-color: #e2f3f13d;
+        padding: 4rem;
+        margin-bottom: 3rem;
+    }
+    .thumbnail{
+        text-align: center;
+        line-height: 2;
+    }
+    .thumbnail a{
+        text-decoration: none;
+        color: #333f47;
+    }
+    .thumbnail a:hover{
+        color: #4e64f2;
+    }
+    .thumbnail-light-image:hover{
+        opacity: 0.8;
+        filter: grayscale(10%);
+    }
+    .thumbnail-light-title{
+        margin-top: 1rem;
+    }
+
+
+{% endblock %}
+
+{% block body %}
+{% load static %}
+    <div>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="3000">
+                <img src="{% static 'styles/images/slider-minimal-slide-1-1920x968.jpg' %}" class="d-block w-100" alt="...">
+
+                <div class="carousel-caption d-none d-md-block" >
+                    <h1> OFFERING DIVERSE</h1>
+                    <h1>PROPERTIES</h1>
+                    <p>inHouse provides you with lots of great properties throught the India so that you could easily choose you dream property.</p>
+                    <input type="button" class="btn" onclick="location.href='/properties/';" value="VIEW PROPERTIES">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="{% static 'styles//images/slider-minimal-slide-4-1920x968.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>EASILY</h1>
+                    <h1>RENT & SALE</h1>
+                    <p>With the help of our service and property management solutions. you can rent or sell any house or apartment</p>
+                    <input type="button" class="btn" onclick="location.href='/properties/';" value="VIEW PROPERTIES">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="{% static 'styles/images/slider-minimal-slide-3-1920x968.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>MORE THAN 1 YEARS OF </h1><h1>EXPERIENCE</h1>
+                    <p>Founded in 2021. our company is a team of renowed property management and real estate experts always ready to help you</p>
+                    <input type="button" class="btn" onclick="location.href='/properties/';" value="VIEW PROPERTIES">
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+
+<!--    <div class="container">-->
+<!--      <div id="demo" class="carousel slide my-3" data-ride="carousel">-->
+<!--          <ul class="carousel-indicators">-->
+<!--            <li data-target="#demo" data-slide-to="0" class="active"></li>-->
+<!--            {% for i in range %}-->
+<!--              <li data-target="#demo" data-slide-to="{{i}}" ></li>-->
+<!--            {% endfor %}-->
+<!--          </ul>-->
+
+<!--          &lt;!&ndash;Slideshow starts here &ndash;&gt;-->
+<!--          <div class="container carousel-inner no-padding">-->
+
+<!--            <div class="carousel-item active">-->
+<!--              <div class="col-xs-3 col-sm-3 col-md-3">-->
+<!--                <div class="card" style="width: 18rem;">-->
+<!--                  <img src='media/{{product.0.image}}' class="card-img-top" alt="...">-->
+<!--                  <div class="card-body">-->
+<!--                      <h5 class="card-title">{{product.0.prop_name}}</h5>-->
+<!--                      <p class="card-text">{{product.0.desc}}</p>-->
+<!--                      <a href="#" class="btn btn-primary">Visit</a>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--             </div>-->
+
+<!--              {% for i in product|slice:"1:" %}-->
+<!--              <div class="col-xs-3 col-sm-3 col-md-3">-->
+<!--                <div class="card" style="width: 18rem;">-->
+<!--                  <img src='media/{{i.image}}' class="card-img-top" alt="...">-->
+<!--                  <div class="card-body">-->
+<!--                    <h5 class="card-title">{{i.prop_name}}</h5>-->
+<!--                    <p class="card-text">{{i.desc}}</p>-->
+<!--                    <a href="#" class="btn btn-primary">Visit</a>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last%}-->
+<!--            </div><div class="carousel-item">-->
+<!--              {% endif %}-->
+<!--              {% endfor %}-->
+<!--          </div>-->
+
+
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; left and right controls for the slide &ndash;&gt;-->
+<!--        <a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+<!--            <span class="carousel-control-prev-icon"></span>-->
+<!--        </a>-->
+<!--        <a class="carousel-control-next" href="#demo" data-slide="next">-->
+<!--            <span class="carousel-control-next-icon"></span>-->
+<!--        </a>-->
+
+
+<!--    </div>-->
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="card" style="width: 18rem;">
+  	  <img src="media/{{product.0.image}}" class="card-img-top" alt="...">
+  	  <div class="card-body">
+    		<h5 class="card-title">{{product.0.prop_name}}</h5>
+    		<p class="card-text">{{product.0.desc}}</p>
+    		<a href="#" class="btn btn-primary">visit</a>
+  	  </div>
+	</div>
+    </div>
+    <div class="carousel-item">
+      <div class="card" style="width: 18rem;">
+  <img src="media/{{product.0.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.0.prop_name}}</h5>
+    <p class="card-text">{{product.0.desc}}</p>
+    <a href="#" class="btn btn-primary">visit</a>
+  </div>
+</div>
+    </div>
+    <div class="carousel-item">
+      <div class="card" style="width: 18rem;">
+  <img src="media/{{product.0.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.0.prop_name}}</h5>
+    <p class="card-text">{{product.0.desc}}</p>
+    <a href="#" class="btn btn-primary">visit</a>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+    <div class="box">
+        <div class="container">
+            <div class="row ">
+            <div class="col-sm-6 col-lg-4 ">
+                <!-- Box Minimal-->
+                <article class="box-minimal">
+                <div >
+                    <h4 class="box-minimal-title"><i class="fa-solid fa-user"></i>  Qualified Employees</h4>
+                    <p >Our team consists of more than 20 qualified and experienced real estate brokers and property managers ready to help you.</p>
+                </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-4 ">
+                <!-- Box Minimal-->
+                <article class="box-minimal">
+                <div >
+
+                    <h4 class="box-minimal-title"><i class="fa-solid fa-message"></i>  Free Consultations</h4>
+                    <p>Our acquaintance with a client always begins with a free consultation to find out what kind of property they are looking for.</p>
+                </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-lg-4 ">
+                <!-- Box Minimal-->
+                <article class="box-minimal">
+                <div>
+                    <h4 class="box-minimal-title "><i class="fa-solid fa-star"></i>  100% Guaranteed</h4>
+                    <p >All the results that you get from our realtors are 100% guaranteed to offer you the best choice of properties throughout the USA.</p>
+                </div>
+                </article>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="thumbnail">
+        <div class="container">
+            <h3 class="text-uppercase">Residential property categories</h3>
+            <p><span class="text-width-1">At our agency, we work with various types of residential real estate property. You can find <br> out more about our properties by browsing our website.</span></p>
+            <div class="row ">
+              <div class="col-sm-6 col-lg-3">
+                <!-- Thumbnail Light-->
+                <article ><a class="thumbnail-light-title"  href="/properties/"><img class="thumbnail-light-image" src="{% static 'styles/images/service-thumbnail-1-270x300.jpg' %}" alt="" width="260" height="250"></a>
+                  <h4 class="thumbnail-light-title"><a href="/properties/">Single-Family Homes</a></h4>
+                </article>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <!-- Thumbnail Light-->
+                <article ><a class="thumbnail-light-title"  href="/properties/"><img class="thumbnail-light-image" src="{% static 'styles/images/service-thumbnail-2-270x300.jpg' %}" alt="" width="270" height="250"></a>
+                  <h4 class="thumbnail-light-title"><a href="/properties/">Townhouses</a></h4>
+                </article>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <!-- Thumbnail Light-->
+                <article ><a class="thumbnail-light-title" href="/properties/"><img class="thumbnail-light-image" src="{% static 'styles/images/service-thumbnail-3-270x300.jpg' %}" alt="" width="270" height="250"></a>
+                  <h4 class="thumbnail-light-title"><a href="/properties/">Multi-Family Homes</a></h4>
+                </article>
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <!-- Thumbnail Light-->
+                <article ><a class="thumbnail-light-title"  href="/properties/"><img class="thumbnail-light-image" src="{% static 'styles/images/service-thumbnail-4-270x300.jpg' %}" alt="" width="270" height="250"></a>
+                  <h4 class="thumbnail-light-title"><a href="/properties/">Apartments</a></h4>
+                </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
